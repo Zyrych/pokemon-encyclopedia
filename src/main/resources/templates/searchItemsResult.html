@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head :: head"></head>
+<header th:replace="fragments/header :: header"></header>
+<body>
+    <form action="/searchPokemonsResult" method="get">
+        <label for="name">Pokémon Name:</label>
+        <input type="text" id="name" name="name" required>
+        <button type="submit">Search</button>
+    </form>
+    <div th:if="${pokemon != null}">
+        <h1 th:text="${pokemon.name}">Pokémon Name</h1>
+        <p>Height: <span th:text="${pokemon.height}">Height</span></p>
+        <p>Weight: <span th:text="${pokemon.weight}">Weight</span></p>
+        <p>Type: <span th:text="${pokemon.type}">Type</span></p>
+        <p>HP: <span th:text="${pokemon.hp}">HP</span></p>
+        <p>Attack: <span th:text="${pokemon.attack}">Attack</span></p>
+        <p>Defense: <span th:text="${pokemon.defense}">Defense</span></p>
+        <p>Special Attack: <span th:text="${pokemon.specialAttack}">Special Attack</span></p>
+        <p>Special Defense: <span th:text="${pokemon.specialDefense}">Special Defense</span></p>
+        <p>Speed: <span th:text="${pokemon.speed}">Speed</span></p>
+    </div>
+    <div th:if="${pokemon == null}">
+        <p>Item not found.</p>
+    </div>
+</body>
+</html>

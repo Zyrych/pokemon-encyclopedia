@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head :: head"></head>
+<header th:replace="fragments/header :: header"></header>
+<body>
+    <form action="/searchItemsResult" method="get">
+        <label for="name">Item Name:</label>
+        <input type="text" id="name" name="name">
+        <button type="submit">Search</button>
+    </form>
+</body>
+</html>
